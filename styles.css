@@ -1,3 +1,4 @@
+/*620101035 Jerome Henry*/
 header {
   color:white;
   background-color:black;
@@ -21,7 +22,6 @@ body{
   grid-template: repeat(6, 100px) / repeat(5, 200px);
   grid-column-gap:5px;
 }
-
 .sideNav{
   grid-row: 1 / span 6;
   grid-column: 1/ span 1;
@@ -90,17 +90,17 @@ img binary{
   padding-left: 100px;
   grid-column: 2;
 }
-
 #submit{
   background-color: #03e8fc;
   border: none;
   color: white;
   padding: 15px 32px;
   text-align: center;
-  text-decoration: none;
-  display: grid;
   font-size: 16px;
   grid-row: 6;
+  grid-column: 1;
+  right:50%;
+
  }
 
 #submit:hover{
