@@ -3,22 +3,22 @@ header {
   background-color:black;
   text-align: left;
   width: 100%;
-  height:25px;
+  height:30px;
   font-size: 12px;
   font-family: sans-serif;
   position: relative;
-  z-index: 10;
+  z-index: 1;
+  line-height: 200%;
   }
 
 body{
   font-size:12px;
-  background: #eeeeee;
+  background:#00000
   color: #212121;
   height: 100%;
 }
 .grid {
   display: grid;
-  border: 2px blue solid;
   grid-template: repeat(6, 100px) / repeat(5, 200px);
   grid-column-gap:5px;
 }
@@ -28,33 +28,58 @@ body{
   grid-column: 1/ span 1;
   position: fixed;
   z-index: 1;
-  top: 0;
-  left: 0;
-  overflow-x: hidden;;
-  padding-top: 20px;
-  color: white;
+  top: 46px;
+  overflow-x: hidden;
+  color: black;
   background-color: #e4e6e9;
 }
-.New {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+.sideNav a{
+  padding: 6px 6px 6px 32px;
+  text-decoration: none;
+  font-family: calibri;
+  font-weight: 55;
+  font-size: 25px;
+  color: black;
+  display: block;
 }
+
+.sideNav a:hover{
+  color:#fcca03;
+}
+
+.main{
+  margin-left: 143px;
+  font-family: calibri;
+}
+
 .Fname {
   grid-row: 2 ;
-  grid-column: 2 / span 4;
+  grid-column: 1 / span 4;
+  padding-left: 5px;
 }
+
 .Lname{
   grid-row: 3;
-  grid-column: 2/ span 4;
- }
-.Pass{
-  grid-row: 4;
-  grid-column: 2/ span 4;
- }
- .Email{
-  grid-row: 5;
-  grid-column: 2/ span 4;
+  grid-column: 1/ span 4;
+  padding-left: 5px;
  }
 
- em { background-color: yellow; }
+ .Pass{
+  grid-row: 4;
+  grid-column: 1/ span 4;
+  padding-left: 5px;
+ }
+
+ .Email{
+  grid-row: 5;
+  grid-column: 1/ span 4;
+  padding-left: 5px;
+ }
+
+ input{
+  width:25%;
+  background-color: #fcca03;
+  border-radius: 4px;
+ }
+
