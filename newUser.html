@@ -2,9 +2,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
 <meta name="viewport"content="width=device-width, initial-scale=1">
-  <link rel='stylesheet' type='text/css' href='styles.css'></head>
-  
+  <link rel='stylesheet' type='text/css' href='styles.css'>
+</head>
 <body>
   <header>
         <h1>BugMe Issue Tracker</h1>
@@ -14,18 +15,20 @@
   <div class="grid">
     <div class="box New"><h1><strong>New User</strong></h1>
       </div>
-      <img src=user.jpg class="binary" width="1172" height="600">
+      <img src=user.jpg class="user" width="1172" height="600">
     <div class="box Fname"><h2>Firstname</h2>
-       <input type="text" name="FirstnameBox"><br>
+       <input type="text" name="FirstnameBox" placeholder="Firstname"><br>
       </div>
     <div class="box Lname"><h2>Lastname </h2>
-          <input type="text" name="LastnameBox"><br>
+          <input type="text" name="LastnameBox" placeholder="Lastname"><br>
          </div>
     <div class="box Pass"><h2>Password</h2>
-          <input type="text" name="PasswordBox"><br>
+          <form action=""> 
+           <input type="password" name="password" placeholder="Password"> 
+          </form>
           </div>
     <div class="box Email"><h2>Email </h2>
-          <input type="text" name="EmailBox"><br>
+          <input type="text" name="EmailBox" placeholder="Example123@example.com"><br>
           </div>
            <button type="submit" id="submit"> Submit </button>
         </div>
@@ -37,7 +40,7 @@
         <li id= newUser><a href="newuser.html">Add User</a></li><br>
         <li id= create><a href="create.html">New Issue</a></li><br>
         <li id= logout><a href="logout.html">Logout</a> </li>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       </ul>
     </div>
 

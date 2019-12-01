@@ -16,11 +16,14 @@ body{
   background:#00000
   color: #212121;
   height: 100%;
+  position: fixed;
 }
 .grid {
   display: grid;
-  grid-template: repeat(6, 100px) / repeat(5, 200px);
+  grid-template-columns:repeat(5, 200px);
+  grid-template-rows: 50px 75px .75fr 75px 75px .75fr 50px ;
   grid-column-gap:5px;
+  grid-row-gap:5px;
 }
 .sideNav{
   grid-row: 1 / span 6;
@@ -33,10 +36,11 @@ body{
   background-color: #e4e6e9;
 }
 
-.New{
+.New, .Create{
   font-family: calibri;
   z-index: 1
 }
+
 .sideNav a{
   padding: 6px 6px 6px 32px;
   text-decoration: none;
@@ -56,53 +60,167 @@ body{
   font-family: calibri;
 }
 
-.Fname {
+.Fname, .Title {
   grid-row: 2 ;
   grid-column: 1 / span 4;
   padding-left: 5px;
 }
 
-.Lname{
+.Lname, .Desc{
   grid-row: 3;
   grid-column: 1/ span 4;
   padding-left: 5px;
  }
 
-.Pass{
+  .Desc input{
+  height: 80px;
+ }
+
+.Pass, .Assign{
   grid-row: 4;
   grid-column: 1/ span 4;
   padding-left: 5px;
  }
 
-.Email{
+.Email,.Type{
   grid-row: 5;
   grid-column: 1/ span 4;
   padding-left: 5px;
  }
 
+ .Priority{
+  grid-row: 6;
+  grid-column: 1/ span 4;
+  padding-left: 5px;
+ }
 input{
   width:23%;
-  background-color: #fcca03;
+  background-color:#fcca03;
   border-radius: 4px;
+  padding-bottom: 5px;
  }
 
-img binary{
-  padding-left: 100px;
+ img {
+  padding-left: 10px;
   grid-column: 2;
 }
 #submit{
-  background-color: #03e8fc;
+  background-color: #0390fc;
   border: none;
   color: white;
-  padding: 15px 32px;
   text-align: center;
   font-size: 16px;
-  grid-row: 6;
+  grid-row: 7;
   grid-column: 1;
-  right:50%;
 
  }
 
-#submit:hover{
+#submit:hover,#submit1:hover{
   background-color:#94fc03;
+}
+
+.custom-select {
+  position: relative;
+  font-family: Calibri;
+  width: 190px;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: #fcca03;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: black;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: #fcca03;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: #c9991e;
+}
+
+/*Login*/
+body{
+    margin:0px;
+}
+
+#logHead{
+  background-color: black;
+  display: grid;
+  align-content: center;
+  height: 70px;
+  width: 100%
+  color: white;
+  padding-left: 300px;
+}
+
+#loginBody{
+  background-image: url("log in.jpg");
+  background-repeat: no-repeat, repeat;
+  width:100%;
+  opacity: 10%;
+}
+
+#loginBody form{
+  background-color: #ede9c0;
+  height: 400px;
+  width: 300px;
+  border-radius: 4px;
+  margin-left: 35%;
+  margin-top: 10px;
+  padding-left: 105px;
+  padding-top: 40px;
+}
+
+#loginBody form input{
+  height: 20px;
+  width: 150px;
+  margin-bottom: 30px;
+}
+#submit1{
+  width: 100px;
+  height: 25px;
+  background-color: #0390fc;
+  color: black;
+  text-align: center;
+  font-size: 12px;
 }

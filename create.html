@@ -1,1 +1,137 @@
 <!--ID#:620101035 Jerome Henry-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' type='text/css' href='styles.css'>
+</head>
+<body>
+  <header>
+        <h1>BugMe Issue Tracker</h1>
+      </header>
+
+<div class ="main">
+  <div class="grid">
+    <div class="box Create"><h1><strong>Create Issue</strong></h1>
+      </div>
+      <img src=binary.jpg class="binary" width="1172" height="600">
+    <div class="box Title"><h2>Title</h2>
+       <input type="text" name="titleBox" placeholder="Title"><br>
+      </div>
+    <div class="box Desc"><h2>Description </h2>
+          <input type="text" name="DescriptionBox" placeholder="Description"><br>
+         </div>
+    <div class="box Assign"><h2>Assigned To</h2>
+          <input type="text" name="AssignBox" placeholder="Name"><br>
+          </div>
+    <div class="box Type"><h2>Type </h2>
+        <div class="custom-select" > 
+        	<select> 
+        		<option value="0"> </option> 
+        		<option value="1">Bug</option> 
+        		<option value="2">Proposal</option> 
+        		<option value="3">Task</option>
+        		 </select> </div><br>
+          </div>
+        <div class="box Priority"><h2>Priority </h2>
+        	 <div class="custom-select"> 
+        	<select> 
+        		<option value="0"> </option> 
+        		<option value="1">Minor</option> 
+        		<option value="2">Major</option> 
+        		<option value="3">Critical</option>
+        	</select> </div><br>
+          </div>
+    <script>
+		var x, i, j, selElmnt, a, b, c;
+		/*look for any elements with the class "custom-select":*/
+		x = document.getElementsByClassName("custom-select");
+		for (i = 0; i < x.length; i++) {
+ 			 selElmnt = x[i].getElementsByTagName("select")[0];
+  			/*for each element, create a new DIV that will act as the selected item:*/
+  			a = document.createElement("DIV");
+  			a.setAttribute("class", "select-selected");
+  			a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+ 		 	x[i].appendChild(a);
+ 			 /*for each element, create a new DIV that will contain the option list:*/
+  			b = document.createElement("DIV");
+  			b.setAttribute("class", "select-items select-hide");
+  			for (j = 1; j < selElmnt.length; j++) {
+    		/*for each option in the original select element,
+    		create a new DIV that will act as an option item:*/
+    			c = document.createElement("DIV");
+    			c.innerHTML = selElmnt.options[j].innerHTML;
+    			c.addEventListener("click", function(e) {
+        		/*when an item is clicked, update the original select box,
+        		and the selected item:*/
+        		var y, i, k, s, h;
+        		s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        		h = this.parentNode.previousSibling;
+        		for (i = 0; i < s.length; i++) {
+          			if (s.options[i].innerHTML == this.innerHTML) {
+            		s.selectedIndex = i;
+            		h.innerHTML = this.innerHTML;
+           			y = this.parentNode.getElementsByClassName("same-as-selected");
+            		for (k = 0; k < y.length; k++) {
+              			y[k].removeAttribute("class");
+            			}
+            		this.setAttribute("class", "same-as-selected");
+            		break;
+          			}
+        		}
+        		h.click();
+    			});
+    			b.appendChild(c);
+  				}
+  				x[i].appendChild(b);
+  			a.addEventListener("click", function(e) {
+      		/*when the select box is clicked, close any other select boxes,
+      		and open/close the current select box:*/
+     		e.stopPropagation();
+      		closeAllSelect(this);
+      		this.nextSibling.classList.toggle("select-hide");
+      		this.classList.toggle("select-arrow-active");
+    		});
+			}
+		function closeAllSelect(elmnt) {
+  			/*a function that will close all select boxes in the document,
+  			except the current select box:*/
+  			var x, y, i, arrNo = [];
+  			x = document.getElementsByClassName("select-items");
+  			y = document.getElementsByClassName("select-selected");
+  			for (i = 0; i < y.length; i++) {
+    			if (elmnt == y[i]) {
+     				arrNo.push(i)
+    			} else {
+      				y[i].classList.remove("select-arrow-active");
+    				}
+  				}
+  			for (i = 0; i < x.length; i++) {
+    			if (arrNo.indexOf(i)) {
+     				x[i].classList.add("select-hide");
+    				}
+  				}
+			}
+			/*if the user clicks anywhere outside the select box,
+			then close all select boxes:*/
+		document.addEventListener("click", closeAllSelect);
+	</script>
+
+    <button type="submit" id="submit"> Submit </button>
+        </div>
+    </div>
+    <div class="box sideNav">
+      <a  href= "javascript:void(0)" class ="navButton" onclick="navButton()"></a>
+        <li id= home><a href="home.html">Home</a></li><br>
+        <li id= newUser><a href="newuser.html">Add User</a></li><br>
+        <li id= create><a href="create.html">New Issue</a></li><br>
+        <li id= logout><a href="logout.html">Logout</a> </li>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      </ul>
+    </div>
+
+
+</body>
+</html>
+
